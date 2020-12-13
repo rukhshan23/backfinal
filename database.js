@@ -9,7 +9,10 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((err) => {
-	if (err) throw err;
+	if (err) {                                     // or restarting (takes a while sometimes).
+      console.log('error when connecting to db:', err);
+      setTimeout(connection, 2000); // We introduce a delay before attempting to reconnect,
+    }
 	console.log('Connected asdsad');
 });
 
