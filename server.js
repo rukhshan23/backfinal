@@ -43,6 +43,7 @@ var list=require("./routes/list");
 var dispatchlist=require("./routes/dispatchlist");
 var listmysellers=require("./routes/listmysellers");
 var review=require("./routes/review");
+var bringsubplans=require("./routes/bringsubplans");
 
 var app=express();
 var router=express.Router();
@@ -57,7 +58,7 @@ router.all("/addBuyer",cors(),addBuyer.display);
 router.all("/addaccount",cors(),addaccount.display);
 router.all("/addseller",cors(),addseller.display);
 router.all("/addsubscription",cors(),addsubscription.display);
-router.all("/deleteBuyer",cors(),deleteAccount.display);
+router.all("/deleteaccount",cors(),deleteAccount.display);
 router.all("/buyerhistory/:id",cors(),buyerhistory.display);
 router.all("/postproduct",cors(),postproduct.display);
 router.all("/listproducts/:id",cors(),listproducts.display);
@@ -96,6 +97,8 @@ router.all("/decrementcredit",cors(),decrementcredit.display);
 router.all("/secquestion/:email",cors(),secquestion.display)
 router.all("/secanswer/:email",cors(),secanswer.display)
 router.all("/resetpassword",cors(),resetpassword.display)
+
+router.all("/bringsubplans",cors(),bringsubplans.display);
 
 
 app.use("/runtime",router);

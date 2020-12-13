@@ -7,7 +7,7 @@ exports.display= async function(req,res){
 	
 	
 	
-	connection.query("SELECT * from product,category where category.product_id=product.product_id and cat_name=?",[cat_name] ,async function (error,results,fields)
+	connection.query("SELECT * from product,category where category.product_id=product.product_id and cat_name=? and product.visibility=1",[cat_name] ,async function (error,results,fields)
 	{
 	if (error)
 	{

@@ -6,7 +6,7 @@ exports.display= async function(req,res){
 	
 	
 	
-	connection.query("SELECT * from product where name LIKE ?",[search] ,async function (error,results,fields)
+	connection.query("SELECT * from product where name LIKE ?  and visibility=1 ",[search] ,async function (error,results,fields)
 	{
 	if (error)
 	{

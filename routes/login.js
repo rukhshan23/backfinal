@@ -33,7 +33,8 @@ exports.display= async function(req,res){
 				'buyer_id':results2[0].buyer_id,
 				'seller_id':results2[0].seller_id,
 				'admin_id':results2[0].admin_id,
-				'type':results[0].type
+				'type':results[0].type,
+				'credit':results2[0].credit
 
 						});
 
