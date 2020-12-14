@@ -1,6 +1,6 @@
 const connection=require("../database");
 exports.display= async function(req,res){
-	connection.query("SELECT * FROM product Where advert_status = 1 ",async function (error,results,fields){
+	connection.query("SELECT * FROM product Where visibility=1 and advert_status = 1",async function (error,results,fields){
 	if (error){
 		res.send({
 			'code':404,

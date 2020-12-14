@@ -10,7 +10,7 @@ exports.display= async function(req,res){
     
 	
 	
-	connection.query("update product set advert_status=1 where product_id=?",[product_id] ,async function (error,results,fields){
+	connection.query("update product set advert_status=1 where product_id=? and visibility=1",[product_id] ,async function (error,results,fields){
 	if (error){
 		res.send({
 			'code':404,
