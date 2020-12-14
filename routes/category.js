@@ -1,4 +1,4 @@
-const connection="../database.js"
+const connection=require("../database")
 
 exports.display= async function(req,res){
 	let cat_name= req.params.catname;
