@@ -7,7 +7,6 @@ exports.display= async function(req,res){
 	console.log(name);
 	console.log(subs_id);
 	console.log(phone);
-	console.log(discount);
 	console.log(account_id);
 	connection.query("INSERT INTO seller(name,subs_id,phone,account_id) values(?,?,?,?)",[name,subs_id,phone,account_id] ,async function (error,results,fields){
 	if (error){

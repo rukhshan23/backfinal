@@ -1,5 +1,4 @@
 const connection=require("../database");
-
 exports.display= async function(req,res){
 	let email= req.body.email
 	let password= req.body.password
@@ -22,26 +21,17 @@ exports.display= async function(req,res){
 		});
 	}
 	else{
-		connection.query("SELECT* from account where email=?",[email] ,async function (error,results1,fields){
-		if (error){
-		res.send({
-			'code':404,
-			'message':'Servor error. Try again',
-			'success':false
-		});
-		}
-		else{
-			res.send({
+
+
+	res.send({
 			'code':201,
 			'message':"Successfull",
 			'success':true,
-			'account_id':results1[0].account_id,
-			'type':results1[0].type
+			'account_id':results.insertId,
+			'type':type
 
 		});
-
-		}
-	});
+		
 	}
 		
 	});
