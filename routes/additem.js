@@ -1,4 +1,4 @@
-const connection=require"../database.js"
+const connection=require("../database")
 
 exports.display= async function(req,res){
 	let order_id=req.body.order_id
